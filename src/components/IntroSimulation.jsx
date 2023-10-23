@@ -65,7 +65,10 @@ export default function IntroSimulation(){
                 each.updatePosition(delta_time);
             });
 
-            renderer.draw(connections[0]);
+            // renderer.draw(connections[0]);
+            renderer.line(points[0].position, points[1].position)
+                .setStrokeStyle("#2E4949")
+                .stroke();
             renderer.circle(points[0].position, Math.max(10,(500-d)/500 * 20))
                 .setFillStyle(is_close ? "white" : "#2097CA")
                 .fill();
