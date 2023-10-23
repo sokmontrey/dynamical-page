@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
+    "@astrojs/react": "^3.0.3",
     "@astrojs/svelte": "^4.0.3",
     "@astrojs/tailwind": "^5.0.2",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
     "astro": "^3.3.2",
     "dynamicaljs": "^1.0.0",
-    "svelte": "^4.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.3"
   }
 }
