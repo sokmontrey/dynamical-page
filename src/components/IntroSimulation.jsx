@@ -4,7 +4,7 @@ export default function IntroSimulation(){
             <canvas id="canvas"></canvas>
         </div>
 
-        <script type="module" src='/public/intro_sim_script.js'>
+        <script type="module" src='/intro_sim_script.js'>
         </script>
     </>);
 }
