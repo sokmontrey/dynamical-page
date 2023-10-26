@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&family=Playfair:opsz@5..1200&family=Tiro+Gurmukhi&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #0C0E0F;
+    color: white;
+    font-family: 'JetBrains Mono', san-serif;
+}
+
+h1{
+    font-size: 3rem;
+    font-family: 'Tiro Gurmukhi', serif;
+}
+h2{
+    font-size: 2.5rem;
+    font-family: 'Tiro Gurmukhi', serif;
+    position: sticky;
+    top: 0px;
+    padding: 10px 0px;
+    margin: 0;
+    background-color: #0C0E0F;
+}
+
+p{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+}
+
+button:hover{
+    color: white;
+}
+a:hover{
+    color: #efad06;
+}
+
+.secondary-button{
+    padding: 0.7rem 1rem;
+    background-color: gray;
+}
