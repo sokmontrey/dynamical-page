@@ -3,15 +3,10 @@ layout: ../layouts/Layout.astro
 title: 'Dynamical JS'
 ---
 
-import LeftCol from '../components/LeftCol.jsx'
-import RightCol from '../components/RightCol.jsx'
-import Block from '../components/Block.jsx'
-
-import IntroSimulation from '../components/visualization/IntroSimulation.jsx'
-
-<template>
-    <IntroSimulation id='intro-sim' client:visible />
-</template>
+import LeftCol from '../components/LeftCol.astro'
+import RightCol from '../components/RightCol.astro'
+import Block from '../components/Block.astro'
+import Script from '../components/Script.astro'
 
 <LeftCol id='visualization-block'>
 </LeftCol>
@@ -42,3 +37,5 @@ import IntroSimulation from '../components/visualization/IntroSimulation.jsx'
         This is a point. ✨<span class='text-[#efad06]'>Boring</span>✨.
     </Block>
 </RightCol>
+
+<Script visualizer='visualization-block' content_block='content-block' />
