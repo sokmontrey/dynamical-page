@@ -1,18 +1,44 @@
 ---
 layout: ../layouts/Layout.astro
+title: 'Dynamical JS'
 ---
 
 import LeftCol from '../components/LeftCol.jsx'
 import RightCol from '../components/RightCol.jsx'
 import Block from '../components/Block.jsx'
 
-<LeftCol client:only='react'>
+import IntroSimulation from '../components/visualization/IntroSimulation.jsx'
+
+<template>
+    <IntroSimulation id='intro-sim' client:visible />
+</template>
+
+<LeftCol id='visualization-block'>
 </LeftCol>
 
-<RightCol>
+<RightCol id='content-block'>
     <Block h='100vh' w='50%'>
         A JavaScript 2D physic 
-        <span style='color: #dd5555;'>~~Engine~~</span> 
+        <span class='text-[#dd5555]'>~~Engine~~</span> 
         library created for fun.
+
+        <br />
+
+        <a href="https://github.com/sokmontrey/dynamical-js" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+        </a>
+
+        <a class='text-[gray] hover:text-[gray]' target="_blank">
+            <i class="fa-solid fa-cube"></i> Example
+        </a>
+
+        <a id='to-doc' target="_blank">
+            <i class="fa-solid fa-book"></i> How does this works?
+        </a>
+    </Block>
+
+    <Block h='100vh'>
+        ## Point
+        This is a point. ✨<span class='text-[#efad06]'>Boring</span>✨.
     </Block>
 </RightCol>

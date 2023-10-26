@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { PointMass, Renderer, DistanceConstraint, Vector, Input } from 'dynamicaljs';
 
-export default function IntroSimulation(){
+export default function IntroSimulation({ id }){
     useEffect(()=>{
         const canvas = document.getElementById('canvas');
         const renderer = new Renderer(canvas);
@@ -86,7 +86,7 @@ export default function IntroSimulation(){
     }, []);
 
     return (<>
-        <div>
+        <div id={id}>
             <canvas id="canvas"></canvas>
         </div>
         {/* <script type="module" src='./intro_sim_script.js'></script> */}
