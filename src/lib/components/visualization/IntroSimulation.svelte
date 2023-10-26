@@ -7,8 +7,19 @@
         const renderer = new Renderer(canvas);
         const ctx = renderer.context;
         const input = new Input(renderer);
-        input.listenMousePosition();
-        input.listenMouseButton();
+
+        const g = new Vector(0,9.8);
+        let acl;
+        try{
+            acl = new Accelerometer({ frequency: 60 });
+            acl.addElementListener('reading', ()=>{
+                g.x = acl.x;
+                g.y = acl.y;
+            });
+        }catch{
+            input.listenMousePosition();
+            input.listenMouseButton();
+        }
 
         renderer.setBackground("#0C0E0F");
 
@@ -44,21 +55,24 @@
             renderer.clear();
 
             points.forEach((each)=>{
-                each.applyGravity();
+                each.applyGravity(g);
             });
 
             connections.forEach((each)=>{
                 each.check();
             });
 
-            const d = Math.max(10, Vector.distance(points[0].position, input.mouse_position));
-            if(d < 50){
-                is_close = true;
-                if(input.is_mousedown){
-                    points[0].setPosition(input.mouse_position);
+            let d = 10;
+            if(!acl.x){
+                d = Math.max(10, Vector.distance(points[0].position, input.mouse_position));
+                if(d < 50){
+                    is_close = true;
+                    if(input.is_mousedown){
+                        points[0].setPosition(input.mouse_position);
+                    }
+                }else{
+                    is_close = false;
                 }
-            }else{
-                is_close = false;
             }
 
             points.forEach((each)=>{

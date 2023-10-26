@@ -1,11 +1,21 @@
 <script>
-    import LeftCol from '$lib/components/LeftCol.svelte';
-    import RightCol from '$lib/components/RightCol.svelte';
-    import Block from '$lib/components/Block.svelte'
-    import IntroSimulation from '$lib/components/visualization/IntroSimulation.svelte';
+    import Section from '$lib/components/Section.svelte';
+
+    /**
+     * @param {string} query_selector
+     */
+    function toElement(query_selector){
+        const ele = document.querySelector(query_selector);
+        if (!ele) return;
+
+        ele.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center'
+        })
+    }
 </script>
 
-<Block h='100vh' w='50%'>
+<Section h='100vh' w='50%'>
     <p>
         A JavaScript 2D physic 
         <span class='text-[#dd5555]'><s>Engine</s></span> 
@@ -20,15 +30,15 @@
         <i class="fa-solid fa-cube"></i> <label>Example</label>
     </a> <br />
 
-    <a id='to-doc' target="_blank">
+    <a id='to-doc' target="_blank" on:click={()=>toElement('#point')}>
         <i class="fa-solid fa-book"></i> <label>How does this works?</label>
     </a> <br />
-</Block>
-<!-- 
-<Block h='100vh'>
-    <h2>Point</h2>
+</Section>
+
+<Section h='100vh'>
+    <h2 id='point'>Point</h2>
     
     <p>
         This is a point. ✨<span class='text-[#efad06]'>Boring</span>✨.
     </p>
-</Block> -->
+</Section> 
