@@ -27,7 +27,7 @@
         ctx.fillStyle = "#ffffff";
 
         const text = "Dynamical-JS";
-        const anchor_position = new Vector(495, 250);
+        const anchor_position = new Vector(480, 250);
 
         const points = [
             new PointMass(
@@ -63,7 +63,7 @@
             });
 
             let d = 10;
-            if(!acl.x){
+            if(!acl.hasReading){
                 d = Math.max(10, Vector.distance(points[0].position, input.mouse_position));
                 if(d < 50){
                     is_close = true;

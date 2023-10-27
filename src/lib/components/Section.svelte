@@ -1,9 +1,29 @@
 <script>
-    export let h='auto', w='80%';
+    export let h='auto', 
+        w='80%', 
+        center=false,
+        title='',
+        id='';
 </script>
 
-<div class='flex justify-start items-center' style={`width: ${w}; height: ${h};`}>
+<section 
+id={id}
+class={'flex justify-start'}
+style={`width: ${w}; height: ${h}; align-items: ${center?'center':'start'}`}>
     <div>
+        {#if title}
+            <h2 class='sticky section-header'>{title}</h2>
+        {/if}
+
         <slot />
     </div>
-</div>
+</section>
+
+<style>
+    .section-header{
+        background-color: #0C0E0Faa;
+        background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #0C0E0F 4px);
+        backdrop-filter: blur(3px);
+        background-size: 10px 10px;
+    }
+</style>

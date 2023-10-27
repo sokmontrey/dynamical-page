@@ -4,7 +4,11 @@
     import RightCol from '$lib/components/RightCol.svelte'
     import IntroSimulation from "$lib/components/visualization/IntroSimulation.svelte";
 
-    let CurrentVisual = IntroSimulation;
+    const sections = [
+        IntroSimulation,
+    ];
+
+    let CurrentVisual = sections[0];
 </script>
 
 <LeftCol>

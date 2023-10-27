@@ -1,7 +1,7 @@
-<div class='fixed w-[50vw] h-[100vh] flex justify-end items-center'>
+<aside class='fixed w-[50vw] h-[100vh] flex justify-end items-center'>
     <div>
         <slot />
     </div>
 
-    <div class='w-[1px] h-[20vh] bg-[white] m-5 mr-6'></div>
-</div>
+    <div class='w-[0.05px] h-[20vh] bg-[gray] m-5 mr-6'></div>
+</aside>

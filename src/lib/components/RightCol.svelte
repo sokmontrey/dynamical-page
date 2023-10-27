@@ -1,3 +1,3 @@
-<div class='pl-[50vw] flex flex-col'>
+<article class='pl-[50vw] flex flex-col'>
     <slot />
-</div>
+</article>
