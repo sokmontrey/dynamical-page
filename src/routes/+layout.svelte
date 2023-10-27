@@ -1,18 +1,26 @@
 <script>
     import "../app.css";
+
     import LeftCol from '$lib/components/LeftCol.svelte'
     import RightCol from '$lib/components/RightCol.svelte'
-    import IntroSimulation from "$lib/components/visualization/IntroSimulation.svelte";
 
-    const sections = [
+    import IntroSimulation from "$lib/components/visualization/IntroSimulation.svelte";
+    import Test from "$lib/components/Test.svelte";
+
+    import section_index from "$lib/section_index";
+
+    const visuals = [
         IntroSimulation,
+        Test
     ];
 
-    let CurrentVisual = sections[0];
+    $: currentVisual = visuals[$section_index];
 </script>
 
 <LeftCol>
-    <svelte:component this={CurrentVisual} />
+    <div>
+        <svelte:component this={currentVisual} />
+    </div>
 </LeftCol>
 
 <RightCol>

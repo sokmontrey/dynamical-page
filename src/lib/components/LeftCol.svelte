@@ -3,5 +3,5 @@
         <slot />
     </div>
 
-    <div class='w-[0.05px] h-[20vh] bg-[gray] m-5 mr-6'></div>
+    <div class='w-[0.1px] h-[20vh] bg-[gray] m-5 mr-6'></div>
 </aside>

@@ -1,6 +1,7 @@
 <script>
-    import { PointMass, Renderer, DistanceConstraint, Vector, Input } from 'dynamicaljs';
     import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
+    import { PointMass, Renderer, DistanceConstraint, Vector, Input } from 'dynamicaljs';
 
     onMount(()=>{
         const canvas = document.getElementById('canvas');
@@ -100,6 +101,4 @@
     });
 </script>
 
-<div>
-    <canvas id="canvas"></canvas>
-</div>
+<canvas id="canvas" in:fade={{duration:300}}></canvas>
