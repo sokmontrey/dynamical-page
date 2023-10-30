@@ -1,5 +1,5 @@
 <aside class='fixed w-[50vw] h-[100vh] flex justify-end items-center'>
-    <div>
+    <div class='w-[100%] flex justify-end overflow-hidden'>
         <slot />
     </div>
 

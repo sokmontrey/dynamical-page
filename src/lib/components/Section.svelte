@@ -1,6 +1,6 @@
 <script>
     export let h='auto', 
-        w='80%', 
+        w='60%', 
         center=false,
         title='',
         id='';
@@ -12,7 +12,7 @@ class={'flex justify-start'}
 style={`width: ${w}; height: ${h}; align-items: ${center?'center':'start'}`}>
     <div>
         {#if title}
-            <h2 class='sticky section-header'>{title}</h2>
+            <h2 class='sticky section-header'>{@html title}</h2>
         {/if}
 
         <slot />

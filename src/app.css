@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --bg-color: #0C0E0F;
+    --pm-color: #efad06;
+    --ac-color: #36e570;
+    --tx-color: white;
+    --gr-color: gray;
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -12,7 +20,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: #0C0E0F;
+    background-color: var(--bg-color);
     color: white;
     font-family: 'JetBrains Mono', san-serif;
 }
@@ -28,22 +36,42 @@ h2{
     top: 0px;
     padding: 10px 0px;
     margin: 0;
-    background-color: #0C0E0F;
+    background-color: var(--bg-color);
 }
 
 p{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.2rem;
+    font-family: 'Playfair', monospace;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
 
 button:hover{
-    color: white;
+    color: var(--tx-color);
 }
 a:hover{
-    color: #efad06;
+    color: var(--pm-color);
 }
 
+.primary-button{
+    padding: 0.7rem 1rem;
+    background-color: var(--ac-color);
+    color: var(--bg-color);
+    box-shadow: 2px 2px 0px var(--bg-color), 
+        3px 3px 0px var(--ac-color);
+    transition: all ease-in-out 0.08s;
+}
+.primary-button:hover{
+    color: var(--bg-color);
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0px var(--bg-color), 
+        5px 5px 0px var(--ac-color);
+}
+.primary-button:active{
+    background-color: var(--tx-color);
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px var(--bg-color);
+}
 .secondary-button{
     padding: 0.7rem 1rem;
-    background-color: gray;
+    background-color: var(--gr-color);
 }

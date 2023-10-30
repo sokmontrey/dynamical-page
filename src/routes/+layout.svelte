@@ -4,23 +4,23 @@
     import LeftCol from '$lib/components/LeftCol.svelte'
     import RightCol from '$lib/components/RightCol.svelte'
 
-    import IntroSimulation from "$lib/components/visualization/IntroSimulation.svelte";
-    import Test from "$lib/components/Test.svelte";
+    import IntroSimulation from "$lib/components/visuals/IntroSimulation.svelte";
+    import Point from "$lib/components/visuals/Point.svelte";
+    import PointMass from "$lib/components/visuals/PointMass.svelte";
 
     import section_index from "$lib/section_index";
 
     const visuals = [
         IntroSimulation,
-        Test
+        Point,
+        PointMass,
     ];
 
-    $: currentVisual = visuals[$section_index];
+    $: currentVisual = visuals[$section_index] || IntroSimulation;
 </script>
 
 <LeftCol>
-    <div>
-        <svelte:component this={currentVisual} />
-    </div>
+    <svelte:component this={currentVisual} />
 </LeftCol>
 
 <RightCol>
