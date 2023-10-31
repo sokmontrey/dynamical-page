@@ -1,12 +1,25 @@
 <script>
     import { scale } from "svelte/transition";
+    import Container from '$lib/components/Container.svelte';
+    import Circle from '$lib/components/Circle.svelte';
 </script>
 
-<div>
+<Container style={{
+    width: '300px',
+    height: '200px',
+    display: 'flex',
+    'flex-direction': 'column',
+    'justify-content': 'center',
+    'align-items': 'center',
+}}>
+    <Circle r={8}/>
+
+    <p class='font-mono text-[var(--gr-color)]'>&#8593;</p>
+
     <p id='just-a-point'>
         Just a point. ✨<span class='text-[#efad06]'>Boring</span>✨.
     </p> 
-</div>
+</Container>
 
 <style>
     #just-a-point{
@@ -14,20 +27,22 @@
             blink 4s step-start 0s;
         overflow: hidden;
         white-space: nowrap;
-        border-right: solid transparent 2px;
+        border-right: solid transparent 13px;
+        border-left: solid transparent 13px;
+        display: inline-block;
     }
     @keyframes typing {
         from { width: 0 }
         to { width: 100% }
     }
     @keyframes blink {
-        from { border-color: transparent; }
-        20% { border-color: white; }
-        40% { border-color: transparent; }
-        60% { border-color: white; }
-        80% { border-color: transparent; }
-        90% { border-color: white; }
-        to { border-color: transparent; }
+        from { border-right-color: transparent; }
+        20% { border-right-color: white; }
+        40% { border-right-color: transparent; }
+        60% { border-right-color: white; }
+        80% { border-right-color: transparent; }
+        90% { border-right-color: white; }
+        to { border-right-color: transparent; }
     }
 </style>
 
