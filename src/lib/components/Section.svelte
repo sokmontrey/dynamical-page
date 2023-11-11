@@ -1,3 +1,8 @@
+<div class='w-[60%] mx-auto flex'>
+    <slot />
+</div>
+
+<!--
 <script>
     export let h='auto', 
         w='60%', 
@@ -27,3 +32,4 @@ style={`width: ${w}; height: ${h}; align-items: ${center?'center':'start'}`}>
         background-size: 10px 10px;
     }
 </style>
+    -->
