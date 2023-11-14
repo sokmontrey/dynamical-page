@@ -1,5 +1,11 @@
+<svelte:head>
+    <title>Dynmical JS</title>
+</svelte:head>
+
 <script>
     import Article from '$lib/component/ui/Article.svelte';
+
+    let is_pointmass = false;
 </script>
 
 <div section="intro" />
@@ -10,7 +16,7 @@ A JavaScript 2D physic ~~Engine~~ library created for no reason whatsoever.
 
 <br />
 
-<div class='flex'>
+<div class='flex items-center'>
 
 [<i class="fa-brands fa-github mr-2"></i>GitHub](https://github.com/sokmontrey/dynamical-js)
 
@@ -19,15 +25,37 @@ A JavaScript 2D physic ~~Engine~~ library created for no reason whatsoever.
 </div>
 
 </Article>
+<Article className='mt-[50vh]'>
+
+<hr />
+
+_<i class="fa-solid fa-question fa-sm mx-5"></i>_
+Please refer to <u>[the official guide on GitHub](https://github.com/sokmontrey/dynamical-js/blob/master/README.md)</u> to use the library. 
+
+<hr />
+
+__<i class="fa-solid fa-triangle-exclamation fa-xs mx-5"></i>__
+Please __keep in mind__ that this was created for my learning purpose only. There are a lot of rooms for improvement.
+
+<hr />
+
+</Article>
+
+<div section="point" notexist={is_pointmass} />
+<div section="pointmass" notexist={!is_pointmass} />
 
 <Article className='pt-[50vh]'>
 
-_<i class="fa-solid fa-question"></i>_
-Please refer to <a href='https://github.com/sokmontrey/dynamical-js/blob/master/README.md' target='_blank' class='ac-color'>the official guide on GitHub</a> to use the library. 
+{#if is_pointmass}
+    ## Point_Mass_
+{:else}
+    ## Point 
+{/if}
 
-<br />
-
-__<i class="fa-solid fa-triangle-exclamation fa-sm"></i>__
-Please __keep in mind__ that this was created for my learning purpose only. There are a lot of rooms for improvement.
+<button class='primary-button' on:click={
+    ()=>is_pointmass=true
+}>
+    Give it Physic!
+</button>
 
 </Article>
