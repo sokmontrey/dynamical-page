@@ -1,4 +1,33 @@
 <script>
+    import Article from '$lib/component/ui/Article.svelte';
 </script>
 
-# Welcome to SvelteKit
+<div section="intro" />
+
+<Article w='60%' className='pt-[40vh]'>
+
+A JavaScript 2D physic ~~Engine~~ library created for no reason whatsoever.
+
+<br />
+
+<div class='flex'>
+
+[<i class="fa-brands fa-github mr-2"></i>GitHub](https://github.com/sokmontrey/dynamical-js)
+
+[<i class="fa-solid fa-cube ml-6 mr-2"></i>Example](google.com)
+
+</div>
+
+</Article>
+
+<Article className='pt-[50vh]'>
+
+_<i class="fa-solid fa-question"></i>_
+Please refer to <a href='https://github.com/sokmontrey/dynamical-js/blob/master/README.md' target='_blank' class='ac-color'>the official guide on GitHub</a> to use the library. 
+
+<br />
+
+__<i class="fa-solid fa-triangle-exclamation fa-sm"></i>__
+Please __keep in mind__ that this was created for my learning purpose only. There are a lot of rooms for improvement.
+
+</Article>

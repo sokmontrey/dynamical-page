@@ -6,6 +6,11 @@
     onMount(()=>{
         const canvas = document.getElementById('canvas');
         const renderer = new Renderer(canvas);
+        const w = canvas.parentElement.clientWidth;
+        const h = canvas.parentElement.clientHeight;
+        renderer.canvas.width = w;
+        renderer.canvas.height = h;
+
         const ctx = renderer.context;
         const input = new Input(renderer);
 
@@ -28,7 +33,7 @@
         ctx.fillStyle = "#ffffff";
 
         const text = "Dynamical-JS";
-        const anchor_position = new Vector(480, 250);
+        const anchor_position = new Vector(w-20, h/2);
 
         const points = [
             new PointMass(
@@ -53,7 +58,7 @@
 
         let is_close = false;
         renderer.update((delta_time)=>{
-            renderer.clear();
+            ctx.clearRect(0, 0, w, h);
 
             points.forEach((each)=>{
                 each.applyGravity(g);
