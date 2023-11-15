@@ -4,11 +4,12 @@
 
 <script>
     import Article from '$lib/component/ui/Article.svelte';
+    import Section from '$lib/component/ui/Section.svelte';
 
     let is_pointmass = false;
 </script>
 
-<div section="intro" />
+<Section section="intro" />
 
 <Article w='60%' className='pt-[40vh]'>
 
@@ -27,6 +28,10 @@ A JavaScript 2D physic ~~Engine~~ library created for no reason whatsoever.
 </Article>
 <Article className='mt-[50vh]'>
 
+## Quick Note
+
+<Section section='quick-note' />
+
 <hr />
 
 _<i class="fa-solid fa-question fa-sm mx-5"></i>_
@@ -41,21 +46,22 @@ Please __keep in mind__ that this was created for my learning purpose only. Ther
 
 </Article>
 
-<div section="point" notexist={is_pointmass} />
-<div section="pointmass" notexist={!is_pointmass} />
+<Article className='mt-[3vh] mb-[50vh]'>
 
-<Article className='pt-[50vh]'>
+<Section section="point" notexist={is_pointmass} />
+<Section section="pointmass" notexist={!is_pointmass} />
 
 {#if is_pointmass}
-    ## Point_Mass_
+    ## Point__Mass__
 {:else}
     ## Point 
-{/if}
 
-<button class='primary-button' on:click={
-    ()=>is_pointmass=true
-}>
-    Give it Physic!
-</button>
+    <button class='primary-button section-eft-btn' id='test' on:click={
+        ()=>is_pointmass=true
+    }>
+        Give it Physic!
+    </button>
+
+{/if}
 
 </Article>

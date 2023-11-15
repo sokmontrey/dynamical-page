@@ -1,19 +1,18 @@
-export function GetSectionVisual () {
-    return Object.fromEntries(
-      Array.from(document.querySelectorAll('[section]')).map(
-        node=>[node.getAttribute('section'), {
-          section: node, 
-          visual: document.querySelectorAll(`[visual="${node.getAttribute('section')}"]`)[0]
-        }]
-      )
+export function GetBlock () {
+    return Array.from(document.querySelectorAll('[section]')).map(
+      (node)=>{ return {
+        name: node.getAttribute('section'),
+        section: node, 
+        visual: document.querySelectorAll(`[visual="${node.getAttribute('section')}"]`)[0]
+      }}
     );
 }
 
-export function CheckCurrentSection(sections){
-  let lower_bound = window.innerHeight / 1.8;
+export function CheckCurrentSection (block){
+  let lower_bound = window.innerHeight / 1.5;
   
-  for(let i=sections.length-1; i>=0; i--){
-    const ele = sections[i];
+  for(let i=block.length-1; i>=0; i--){
+    const ele = block[i].section;
 
     if(!ele) continue;
     if(ele.getAttribute('notexist')==='true') continue;
@@ -25,6 +24,7 @@ export function CheckCurrentSection(sections){
 
     return i;
   }
+  return 0;
 }
 
 export function ScrollTo(element){
@@ -32,12 +32,17 @@ export function ScrollTo(element){
 
   element.scrollIntoView({
     behavior: 'smooth',
-    inline: 'start',
-    block: 'start'
+    inline: 'center',
+    block: 'center'
   });
 }
 
-export function UpdateVisual(visuals, current_visual){
-  visuals.forEach(v=>v.className = 'hidden');
-  current_visual.className = '';
+export function UpdateVisual(block, current_i){
+  if(!block[current_i]) return;
+
+  const current_visual = block[current_i].visual;
+  if(!current_visual) return;
+
+  block.forEach(({visual})=>(visual&&visual.style.display!='none')?visual.style.display='none':null);
+  current_visual.style.display = 'block';
 }

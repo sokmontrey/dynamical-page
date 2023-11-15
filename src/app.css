@@ -22,6 +22,16 @@
     color: var(--ac-color);
 }
 
+.mn-font{
+    font-family: var(--mn-font);
+}
+.hd-font{
+    font-family: var(--hd-font);
+}
+.rd-font{
+    font-family: var(--rd-font);
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -44,10 +54,11 @@ h2{
     font-size: 2.5rem;
     font-family: var(--hd-font);
     position: sticky;
-    top: 0px;
+    top: -1px;
     padding: 10px 0px;
     margin: 0;
     background-color: var(--bg-color);
+    z-index: 10;
 }
 
 p{
@@ -58,6 +69,7 @@ p{
 hr{
     margin: 1.5rem 0px;
     opacity: 0.2;
+    z-index: 0;
 }
 u{
     text-decoration: underline solid 1px;

@@ -1,48 +1,48 @@
 <script>
   import "../app.css";
   import { onMount } from 'svelte';
-  import { GetSectionVisual, CheckCurrentSection, ScrollTo, UpdateVisual } from '$lib/util/dom.js'; 
+  import { GetBlock, CheckCurrentSection, UpdateVisual } from '$lib/util/dom.js'; 
   import Visual from './visual.svelte';
+  import TableContent from '$lib/component/ui/TableContent.svelte';
 
-  let section;
-  let section_index = 0;
+  let block;
+  let block_i = 0;
   onMount(()=>{
-    section = GetSectionVisual();
+    block = GetBlock();
 
-    const _updateSectionIndex = ()=>{
-      section_index = CheckCurrentSection(
-        Object.values(section).map(
-          v=>v.section
-        )
-      );
+    const _updateBlockIndex = ()=>{
+      block_i = CheckCurrentSection(block);
+      UpdateVisual(block, block_i);
     }
 
-    _updateSectionIndex();
-    window.addEventListener('scroll', ()=>{
-      _updateSectionIndex();
-    });
+    _updateBlockIndex();
+    window.addEventListener('scroll', _updateBlockIndex);
+
+    Array.from(document.getElementsByClassName('section-eft-btn')).forEach(
+      ele=>ele.addEventListener('click', _updateBlockIndex)
+    );
   });
-
-  $: section_index, section 
-    ? (()=>{
-      const section_list = Object.values(section);
-      const current_section = section_list[section_index];
-
-      ScrollTo(current_section.section);
-      UpdateVisual(
-        section_list.map(v=>v.visual),
-        current_section.visual
-      );
-    })()
-    : null;
-
 </script>
 
-<div class='fixed h-[100vh] w-1/2 flex items-center justify-end'>
+<div class='fixed top-0 left-0 py-5 pl-5 z-20'>
+  <h1 class='text-[1.5rem] opacity-50'>
+    Dynamical <span class='ac-color mn-font'>JS</span>
+  </h1>
+  <h2 class='text-[1rem] opacity-50 mn-font p-0'>By Sokmontrey</h2>
+
+  <nav>
+  <!-- Icons -->
+  </nav>
+
+  {#if block}
+    <TableContent block={block} block_i={block_i} />
+  {/if}
+</div>
+
+<div class='z-10 fixed h-[100vh] w-1/2 flex items-center justify-end'>
   <Visual />
   <div class='h-[100vh] opacity-20 w-[1px] mr-5'></div>
 </div>
-
 
 <div class='w-1/2 ml-[50%]'>
   <slot />

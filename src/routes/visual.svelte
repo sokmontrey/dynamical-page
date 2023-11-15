@@ -6,10 +6,10 @@
     <IntroSim />
 </div>
 
-<div visual='point' class='hidden'>
+<div visual='point'>
     Point
 </div>
 
-<div visual='pointmass' class='hidden'>
+<div visual='pointmass'>
     PointMass
 </div>
