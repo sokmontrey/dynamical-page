@@ -4,3 +4,9 @@
 </script>
 
 <div id={'s-'+section} section={section} notexist={notexist} />
+
+<style>
+    div{
+        scroll-snap-align: center;
+    }
+</style>

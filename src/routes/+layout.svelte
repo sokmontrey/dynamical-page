@@ -22,6 +22,8 @@
       ele=>ele.addEventListener('click', _updateBlockIndex)
     );
   });
+
+  let table_show_limit = 3;
 </script>
 
 <div class='fixed top-0 left-0 py-5 pl-5 z-20'>
@@ -35,7 +37,7 @@
   </nav>
 
   {#if block}
-    <TableContent block={block} block_i={block_i} />
+    <TableContent block={block} block_i={block_i} show_limit={table_show_limit} />
   {/if}
 </div>
 
