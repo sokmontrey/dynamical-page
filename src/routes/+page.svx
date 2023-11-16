@@ -27,10 +27,9 @@ A JavaScript 2D physic ~~Engine~~ library created for no reason whatsoever.
 
 </Article>
 <Article className='mt-[50vh]'>
+<Section section='quick-note' />
 
 ## Quick Note
-
-<Section section='quick-note' />
 
 <hr />
 
@@ -39,17 +38,12 @@ Please refer to <u>[the official guide on GitHub](https://github.com/sokmontrey/
 
 <hr />
 
-__<i class="fa-solid fa-triangle-exclamation fa-xs mx-5"></i>__
-Please __keep in mind__ that this was created for my learning purpose only. There are a lot of rooms for improvement.
-
-<hr />
-
 </Article>
 
-<Article className='mt-[3vh] mb-[50vh]'>
+<Article className='mt-[30vh] mb-[50vh]'>
 
-<Section section="point" notexist={is_pointmass} />
-<Section section="pointmass" notexist={!is_pointmass} />
+<Section section="point" notexist={is_pointmass} lower_bound={1.7}/>
+<Section section="pointmass" notexist={!is_pointmass} lower_bound={1.7}/>
 
 {#if is_pointmass}
     ## Point__Mass__
