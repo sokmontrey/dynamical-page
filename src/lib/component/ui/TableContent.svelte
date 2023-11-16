@@ -7,6 +7,8 @@
     export let show_limit = 3;
 
     let window_length = show_limit;
+
+    const isBlockExist = (blk)=>blk.section.getAttribute('notexist')==='false'
 </script>
 
 {#key block_i}
@@ -15,23 +17,27 @@
     {#key show_limit}
 
         {#each block as blk,i}
-            {#if IsInArrayWindow(i,block,block_i,window_length)}
-
-                {#if blk.section.getAttribute('notexist')==='false'}
-                    <li class='mn-font text-base' 
-                    style={i===block_i?'color:var(--ac-color);':''}>
-                        <button on:click={
-                            ()=>ScrollTo(blk.section)
-                        } class='hover:text-[var(--pm-color)]'>
-                            {blk.name.replace('-',' ')}
-                        </button>
-                    </li>
-                {:else}
-                    <li class='mn-font text-base opacity-20'>
+            {#if 
+                IsInArrayWindow(i,block,block_i,window_length)
+                && 
+                isBlockExist(blk)
+            }
+                <li class='mn-font text-base' 
+                style={i===block_i?'color:var(--ac-color);':''}>
+                    <button on:click={
+                        ()=>ScrollTo(blk.section)
+                    } class='hover:text-[var(--pm-color)]'>
                         {blk.name.replace('-',' ')}
-                    </li>
-                {/if}
-
+                    </button>
+                </li>
+            {:else if isBlockExist(blk)}
+                <li class='mn-font text-base opacity-70'>
+                    {blk.name.replace('-',' ')}
+                </li>
+            {:else}
+                <li class='mn-font text-base opacity-10'>
+                    {blk.name.replace('-',' ')}
+                </li>
             {/if}
         {/each}
 
