@@ -9,7 +9,6 @@ export function GetBlock () {
 }
 
 export function CheckCurrentSection (block){
-  let lower_bound = window.innerHeight / 1.5;
   
   for(let i=block.length-1; i>=0; i--){
     const ele = block[i].section;
@@ -20,6 +19,7 @@ export function CheckCurrentSection (block){
     const view_port_offset = ele.getBoundingClientRect();
     const top = view_port_offset.top;
 
+    const lower_bound = window.innerHeight/parseFloat(ele.getAttribute('lower_bound'));
     if(top >= lower_bound) continue;
 
     return i;
