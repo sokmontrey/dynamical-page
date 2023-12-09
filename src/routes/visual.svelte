@@ -20,5 +20,5 @@
 </div>
 
 <div visual='pointmass'>
-  Developing in progress
+  Development in progress
 </div>
