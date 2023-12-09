@@ -7,9 +7,7 @@ export function GetBlock () {
       }}
     );
 }
-
 export function CheckCurrentSection (block){
-  
   for(let i=block.length-1; i>=0; i--){
     const ele = block[i].section;
 

@@ -34,7 +34,7 @@ A JavaScript 2D physic ~~Engine~~ library created for no reason whatsoever.
 <hr />
 
 _<i class="fa-solid fa-question fa-sm mx-5"></i>_
-Please refer to <u>[the official guide on GitHub](https://github.com/sokmontrey/dynamical-js/blob/master/README.md)</u> to use the library. 
+Please refer to <u>[the official guide on GitHub](https://github.com/sokmontrey/dynamical-js/)</u> to use the library. 
 
 <hr />
 
