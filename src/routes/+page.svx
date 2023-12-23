@@ -5,8 +5,6 @@
 <script>
     import Article from '$lib/component/ui/Article.svelte';
     import Section from '$lib/component/ui/Section.svelte';
-
-    let is_pointmass = false;
 </script>
 
 <Section section="intro" />
@@ -42,20 +40,22 @@ Please refer to <u>[the official guide on GitHub](https://github.com/sokmontrey/
 
 <Article className='mt-[30vh] mb-[50vh]'>
 
-<Section section="point" notexist={is_pointmass} lower_bound={1.7}/>
-<Section section="pointmass" notexist={!is_pointmass} lower_bound={1.7}/>
+<Section section="getting-started" />
 
-{#if is_pointmass}
-    ## Point__Mass__
-{:else}
-    ## Point 
+## Getting __Started__
 
-    <button class='primary-button section-eft-btn' id='test' on:click={
-        ()=>is_pointmass=true
-    }>
-        Give it Physic!
-    </button>
+In order to understand how to create a simple simulation, let's take a look at an example.
 
-{/if}
+<br />
+
+<button class='primary-button' id='spawn-cube-button'>Spawn Cube</button>
+
+</Article>
+
+<Article className='mt-[30vh] mb-[50vh]'>
+
+<Section section="pointmass" />
+
+## Point__Mass__
 
 </Article>
