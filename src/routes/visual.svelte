@@ -1,6 +1,5 @@
 <script>
   import IntroSim from '$lib/component/visual/IntroSim.svelte';
-  import CubeSim from '$lib/component/visual/CubeSim.svelte';
 </script>
 
 <div visual='intro'>
@@ -17,7 +16,7 @@
 </div>
 
 <div visual='getting-started'>
-  <CubeSim />
+  something
 </div>
 
 <div visual='pointmass'>

@@ -26,6 +26,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dynamicaljs": "^1.0.5"
+		"dynamicaljs": "^1.1.0"
 	}
 }
